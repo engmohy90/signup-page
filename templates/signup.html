@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>signup</title>
+  </head>
+
+  <body>
+    <h1>Signup</h1>
+    <h3>welcome to our website please fillout the form to signup </h3>
+
+   <p>incorrect u= {{incorrect_u}} p= {{incorrect_p}} v= {{incorrect_v}} e={{incorrect_e}}</p>
+    <p> empty  u= {{empty_u}} p= {{empty_p}} v= {{empty_v}} e= {{empty_e}}</p>   
+
+
+
+    <form method="post">
+      <table>
+        <tr>
+          <td style="text-align: right;">Username</td>
+          <td> <input type="text" name="username" value={{username}}> </td>
+          {% if empty_u == 2 %}
+            <td style="color: red">please enter username</td>
+          {% endif %}
+          {% if incorrect_u == 2 %}
+            <td style="color: red">user is not correct</td>
+          {% endif %}
+        </tr>
+        <br>
+        <tr>
+          <td style="text-align: right;">Password</td>
+          <td><input type="password" name="password"></td>
+          {% if empty_p == 2 %}
+            <td style="color: red">please enter password</td>
+          {% endif %}
+          {% if incorrect_p == 2 %}
+            <td style="color: red">password is not correct typed</td>
+          {% endif %}
+       </tr>
+        <br>
+        <tr>
+          <td>Verify Password</td>
+          <td><input type="password" name="verify"></td>
+          {% if empty_v == 2 %}
+            <td style="color: red">please re enter password</td>
+          {% endif %}
+          {% if incorrect_v == 2 %}
+            <td style="color: red">password missmatch</td>          
+          {% endif %}
+
+        </tr>
+        <br>
+        <tr>
+          <td>Email(otional)</td>
+          <td><input type="text" name="email" value={{email}}></td>
+          {% if empty_e == 2 %}
+            <td style="color: red">please enter your email</td>
+          {% endif %}
+          {% if incorrect_e == 2 %}
+            <td style="color: red">email is not correct </td>            
+          {% endif %}
+
+        </tr>
+
+      </table>
+      <br>
+      <br>
+      <input type="submit">
+    
+    </form>
+  </body>
+
+</html>
